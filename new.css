@@ -20,11 +20,12 @@ h1 {
     padding: 30px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    padding: 10;
 }
 
 td {
-    height: 100px; 
-    width: 140px;
+    height: 80px; 
+    width: 120px;
     text-align: center;
     font-size: 3em;
     font-weight: bold;
@@ -56,12 +57,15 @@ td {
 .tie {
     display: none;
     color: aqua;
-    font-size: 2em;
+    font-size: 1,5em;
     font-family: sans-serif;
+    margin: 0;
 }
 
 h4{
     color: burlywood;
+    padding: 10;
+    margin: 0;
 }
 
 .next {
@@ -75,5 +79,21 @@ h4{
     background-color: yellowgreen;
     cursor: pointer;
     display: none;
-    margin-top: 30px;
+    margin: 30px 0;
+}
+
+.btns {
+    margin-bottom: 20px;
+}
+
+.xBtn,
+.oBtn {
+    width: 50px;
+    height: 27px;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: chartreuse;
+    border: none;
+    border-radius: 5px;
+    color:indianred;
 }

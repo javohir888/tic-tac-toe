@@ -1,9 +1,10 @@
 let X = document.querySelector(".xBtn");
-let O = document.querySelector(".nulik");
+let O = document.querySelector(".oBtn");
 let katak = document.querySelectorAll("td");
 let btns = document.querySelector(".btns");
 let user1 = null;
 let user2 = null;
+let none = "***";
 let turn = true;
 let count = 1;
 let one = document.querySelector(".one");
@@ -54,7 +55,7 @@ function win() {
           item[2].style.cssText = "color: red;";
           draw.style.cssText = "display: none;";
           next.style.cssText = "display: block;";
-          
+          noneFunctionX();
         } else if (item[0].textContent == "O" && item[1].textContent == "O" && item[2].textContent == "O") {
           win2.style.cssText = "display: block;";
           item[0].style.cssText = "color: red;";
@@ -62,9 +63,26 @@ function win() {
           item[2].style.cssText = "color: red;";
           draw.style.cssText = "display: none;";
           next.style.cssText = "display: block;";
+          noneFunctionO();
         }
       }
     });
+}
+
+function noneFunctionX() {
+  katak.forEach((item) => {
+    if (item.textContent == "" || item.textContent == "O") {
+      item.textContent = none;
+    }
+  });
+}
+
+function noneFunctionO() {
+  katak.forEach((item) => {
+    if (item.textContent == "" || item.textContent == "X") {
+      item.textContent = none;
+    }
+  });
 }
 
 let round = 0;
@@ -99,6 +117,9 @@ function restart() {
   win1.style.cssText = "display: none;";
   win2.style.cssText = "display: none;";
   tie.style.cssText = "display: none;";
+  katak.forEach((item) => {
+    item.style.cssText = "color: white;"
+  })
 }
 
 next.addEventListener('click', ()=> {
